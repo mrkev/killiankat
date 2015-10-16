@@ -1,9 +1,11 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Nyannyankillian</title>
 </head>
 <body>
+
+  <!-- Unminified -->
   <a href="javascript:
   new Audio('http://ow.ly/TuCUA').play();
   function addcss(css){
@@ -13,20 +15,67 @@
      (document.getElementsByTagName('head')[0]).appendChild(s);
   };
   addcss('
-  body {background: #194e81;}
+  body {background: #194e81 !important;}
   body * {
-    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    color:transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) ) !important;
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) ) !important;
+    color:transparent !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+  }
+  .nyannyankillian {
+    position: fixed;
+    top: 10;
+    left: 10;
   }
   ');
 
-  var img = new Image();
-  img.src = 'http://media3.giphy.com/media/CpA8xFyiRfQ2s/giphy.gif';
-  document.body.appendChild(img);
+  var w = window.innerWidth
+  || document.documentElement.clientWidth
+  || document.body.clientWidth;
+  
+  var h = window.innerHeight
+  || document.documentElement.clientHeight
+  || document.body.clientHeight;
+  
+  do_move = function(killian) {
+    killian.l += killian.vx;
+    killian.t += killian.vy;
+    if (killian.l > w - 400 || killian.l < 0) killian.vx = -killian.vx;
+    if (killian.t > h - 400 || killian.t < 0) killian.vy = -killian.vy;
 
-  ">ayyyyyyyyyy</a>
+    killian.style.left = killian.l;
+    killian.style.top  = killian.t;
+
+    setTimeout(function () { do_move(killian);}, 30);
+  };
+
+  a_killian = function () {
+    var nyan = new Image();
+    nyan.l = 0;
+    nyan.t = 0;
+    nyan.vx = (Math.random() - 0.5) * 6;
+    nyan.vy = (Math.random() - 0.5) * 6;
+    nyan.src = 'http://ow.ly/Tv4pQ';
+    nyan.className = 'nyannyankillian';
+    document.body.appendChild(nyan);
+    return nyan;
+  };
+
+  setTimeout(function () {
+    do_move(a_killian());
+    moar_killian();
+  }, 4800);
+
+  var moar_killian = function () {
+    setTimeout(function () {
+      do_move(a_killian());
+      moar_killian();
+    }, 13714);
+  };
+  ">Unminified. </a>
+
+  <!-- Minified -->
+  <a href="javascript:function addcss(o){var t=document.createElement('style');t.setAttribute('type','text/css'),t.appendChild(document.createTextNode(o)),document.getElementsByTagName('head')[0].appendChild(t)}new Audio('http://ow.ly/TuCUA').play(),addcss('body {background: #194e81;}body * {background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );background-image:gradient(linear,left top,right top,color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip:text;background-clip: text;}.nyannyankillian {position: fixed;top: 10;left: 10;}');var w=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,h=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;do_move=function(o){o.l+=o.vx,o.t+=o.vy,(o.l>w-400||o.l<0)&&(o.vx=-o.vx),(o.t>h-400||o.t<0)&&(o.vy=-o.vy),o.style.left=o.l,o.style.top=o.t,setTimeout(function(){do_move(o)},30)},a_killian=function(){var o=new Image;return o.l=0,o.t=0,o.vx=6*(Math.random()-.5),o.vy=6*(Math.random()-.5),o.src='http://ow.ly/Tv4pQ',o.className='nyannyankillian',document.body.appendChild(o),o},setTimeout(function(){do_move(a_killian()),moar_killian()},4800);var moar_killian=function(){setTimeout(function(){do_move(a_killian()),moar_killian()},13714)};/*github.com/mrkev/killiankat*/">Minified. </a>
 </body>
 </html>
